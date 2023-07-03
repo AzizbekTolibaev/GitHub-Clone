@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/BACKGROUND"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        style="@style/TOOLBAR"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            style="@style/ICON"
+            android:background="@drawable/ripple_icon"
+            android:padding="8dp"
+            android:contentDescription="@string/todo"/>
+
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:singleLine="true"
+            android:textColorHint="@color/grey_color"
+            android:hint="@string/search_github"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_rc_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        style="@style/TOOLBAR"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/recent_searches"
+                style="@style/TEXTVIEW"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/btn_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/clear"
+                android:background="@drawable/ripple_icon"
+                android:textColor="@color/link_color"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_search"
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_search_with"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        style="@style/TOOLBAR"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/tv_repositories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/repositories"
+            android:textSize="16sp"
+            android:foreground="?selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_repository" />
+
+        <TextView
+            android:id="@+id/tv_issues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/issues"
+            android:textSize="16sp"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_issue" />
+
+        <TextView
+            android:id="@+id/tv_pull_request"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pull_requests"
+            android:textSize="16sp"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_pull_request" />
+
+        <TextView
+            android:id="@+id/tv_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/people"
+            android:textSize="16sp"
+            android:background="?android:selectableItemBackground"
+            android:focusable="true"
+            android:clickable="true"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_person" />
+
+        <TextView
+            android:id="@+id/tv_organizations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/repositories"
+            android:textSize="16sp"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_organization" />
+
+        <TextView
+            android:id="@+id/tv_jump_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/jump"
+            android:textSize="16sp"
+            style="@style/TEXT_ICON"
+            android:padding="16dp"
+            android:drawablePadding="16dp"
+            app:drawableStartCompat="@drawable/ic_repository" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_empty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/find_your_stuff"
+            style="@style/TEXT_ICON"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_empty_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/search_all_of_github_for_people_repositories_organizations_issues_and_pull_requests"
+            android:textSize="16sp"
+            style="@style/TEXT_ICON"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

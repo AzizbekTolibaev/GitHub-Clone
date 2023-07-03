@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GithubClone" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">@color/toolbar_dark_color</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="BACKGROUND">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="TOOLBAR">
+        <item name="android:background">@color/toolbar_dark_color</item>
+    </style>
+
+    <style name="TEXTVIEW" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TEXT_GRAY" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@color/grey_dark_color</item>
+    </style>
+
+    <style name="BOTTOM_NAVI">
+        <item name="itemIconTint">@color/link_color</item>
+        <item name="itemTextColor">@color/link_color</item>
+        <item name="android:background">@color/toolbar_dark_color</item>
+    </style>
+
+    <style name="ICON">
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="LINE">
+        <item name="android:background">@color/line_dark_color</item>
+    </style>
+
+    <style name="BG_ITEM">
+        <item name="android:background">@drawable/bg_item_dark</item>
+    </style>
+
+    <style name="CATEGORY">
+        <item name="android:background">@drawable/bg_category_dark</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="TEXT_ICON">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableTint">@color/white</item>
+    </style>
+
+    <style name="SIGN_IN">
+        <item name="android:background">@drawable/bg_btn_sign_in_dark</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="SIGN_IN_ENTERPRISE">
+        <item name="android:background">@drawable/bg_btn_sign_in</item>
+        <item name="android:backgroundTint">@color/toolbar_dark_color</item>
+        <item name="android:textColor">@color/github_bg_color</item>
+    </style>
+
+</resources>

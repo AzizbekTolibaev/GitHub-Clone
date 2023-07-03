@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Github Clone</string>
+    <string name="sign_in_with_github">Sign in with Github</string>
+    <string name="sign_in_with_github_enterprise">Sign in with Github enterprise</string>
+    <string name="terms_and_privacy">By signing in your accept our
+        <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"> Terms of use </a>and
+        <a href = "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service"> Privacy policy </a>
+    </string>
+    <string name="home">Home</string>
+    <string name="notifications">Notifications</string>
+    <string name="explore">Explore</string>
+    <string name="profile">Profile</string>
+    <string name="my_work">My Work</string>
+    <string name="todo">TODO</string>
+    <string name="issues">Issues</string>
+    <string name="pull_requests">Pull Requests</string>
+    <string name="discussions">Discussions</string>
+    <string name="repositories">Repositories</string>
+    <string name="organizations">Organizations</string>
+    <string name="starred">Starred</string>
+    <string name="elon_musk">Elon Musk</string>
+    <string name="followers">followers</string>
+    <string name="following">following</string>
+    <string name="popular">Popular</string>
+    <string name="currency_convertor">Currency-Convertor</string>
+    <string name="kotlin">Kotlin</string>
+    <string name="search_github">Search GitHub</string>
+    <string name="recent_searches">Recent searches</string>
+    <string name="clear">CLEAR</string>
+    <string name="all">All</string>
+    <string name="people">People</string>
+    <string name="jump">Jump</string>
+    <string name="find_your_stuff">Find your stuff.</string>
+    <string name="search_all_of_github_for_people_repositories_organizations_issues_and_pull_requests">Search all of GitHub for People, Repositories, Organizations, Issues, and Pull Requests.</string>
+    <string name="inbox">Inbox</string>
+    <string name="repository">Repository</string>
+    <string name="discover">Discover</string>
+</resources>
