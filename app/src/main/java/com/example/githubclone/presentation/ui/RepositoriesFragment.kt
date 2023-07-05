@@ -27,7 +27,6 @@ class RepositoriesFragment: Fragment(R.layout.fragment_repositories) {
         initListener()
         initObservers()
 
-        (requireActivity() as MainActivity).hideBottomNavigation()
     }
 
     private fun initVariables() {

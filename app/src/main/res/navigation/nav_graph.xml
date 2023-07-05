@@ -16,8 +16,8 @@
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"/>
         <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/splashFragment"
             app:popUpToInclusive="true"/>
     </fragment>
@@ -27,8 +27,8 @@
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_homeFragment"
-            app:destination="@id/homeFragment"
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true"/>
     </fragment>
@@ -44,33 +44,6 @@
             android:id="@+id/action_searchFragment_to_searchWithRepositoriesFragment"
             app:destination="@id/searchWithRepositoriesFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.githubclone.presentation.ui.HomeFragment"
-        android:label="HomeFragment"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_repositoriesFragment"
-            app:destination="@id/repositoriesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/notificationsFragment"
-        android:name="com.example.githubclone.presentation.ui.NotificationsFragment"
-        android:label="NotificationsFragment"
-        tools:layout="@layout/fragment_notifications"/>
-    <fragment
-        android:id="@+id/exploreFragment"
-        android:name="com.example.githubclone.presentation.ui.ExploreFragment"
-        android:label="ExploreFragment"
-        tools:layout="@layout/fragment_explore"/>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.githubclone.presentation.ui.ProfileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile"/>
     <fragment
         android:id="@+id/repositoriesFragment"
         android:name="com.example.githubclone.presentation.ui.RepositoriesFragment"
@@ -93,5 +66,17 @@
         <argument
             android:name="name"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.githubclone.presentation.ui.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_repositoriesFragment"
+            app:destination="@id/repositoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_searchFragment"
+            app:destination="@id/searchFragment" />
     </fragment>
 </navigation>

@@ -20,7 +20,7 @@ class SplashFragment: Fragment(R.layout.fragment_splash) {
 
         Handler(Looper.getMainLooper()).postDelayed({
             if (isUserLogged) {
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_splashFragment_to_mainFragment)
             } else {
                 findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
             }

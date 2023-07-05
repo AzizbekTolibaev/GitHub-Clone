@@ -71,7 +71,7 @@ class LoginFragment: Fragment(R.layout.fragment_login) {
                 LocalStorage.pref.edit().putString("userToken", it).apply()
                 Log.d("JJJJ", "$it")
             }
-            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_mainFragment)
         }
 
         viewModel.messageLiveData.observe(requireActivity()) { }

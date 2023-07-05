@@ -48,8 +48,6 @@ class SearchFragment: Fragment(R.layout.fragment_search) {
             viewModel.getAllSearch()
         }
 
-        (requireActivity() as MainActivity).hideBottomNavigation()
-
         binding.rcView.adapter = adapter
     }
 
