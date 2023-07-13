@@ -1,8 +1,8 @@
-package com.example.githubclone.domain.usecase.searchfragmentusecases
+package com.example.githubclone.domain.usecase.searchfragmentroomusecases
 
 import com.example.githubclone.data.dao.entity.SearchData
 
-interface UseCaseAddSearch {
+interface UseCaseDeleteSearch {
 
     suspend fun execute(searchData: SearchData)
 }

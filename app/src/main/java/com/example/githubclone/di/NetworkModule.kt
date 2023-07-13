@@ -1,12 +1,9 @@
 package com.example.githubclone.di
 
-import android.content.Context
-import com.example.githubclone.App
 import com.example.githubclone.data.apiservice.GithubApi
 import com.example.githubclone.data.dao.SearchDao
 import com.example.githubclone.data.dao.database.SearchDatabase
 import com.example.githubclone.utils.AccessTokenInterceptor
-import com.example.githubclone.utils.LocalStorage
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

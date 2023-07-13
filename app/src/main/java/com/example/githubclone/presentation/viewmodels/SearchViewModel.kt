@@ -5,11 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.githubclone.data.dao.entity.SearchData
 import com.example.githubclone.data.repositoryimpl.SearchRepositoryImpl
-import com.example.githubclone.domain.usecase.searchfragmentusecases.UseCaseAddSearch
-import com.example.githubclone.domain.usecase.searchfragmentusecases.UseCaseDeleteSearch
-import com.example.githubclone.domain.usecase.searchfragmentusecases.impl.UseCaseAddSearchImpl
-import com.example.githubclone.domain.usecase.searchfragmentusecases.impl.UseCaseDeleteSearchImpl
-import com.example.githubclone.domain.usecase.searchfragmentusecases.impl.UseCaseGetAllSearchImpl
+import com.example.githubclone.domain.usecase.searchfragmentroomusecases.impl.UseCaseAddSearchImpl
+import com.example.githubclone.domain.usecase.searchfragmentroomusecases.impl.UseCaseDeleteSearchImpl
+import com.example.githubclone.domain.usecase.searchfragmentroomusecases.impl.UseCaseGetAllSearchImpl
 
 class SearchViewModel(private val repo: SearchRepositoryImpl): ViewModel() {
 

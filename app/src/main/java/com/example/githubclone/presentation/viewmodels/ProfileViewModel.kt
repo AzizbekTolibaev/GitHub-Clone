@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.githubclone.data.GetUserProfileInfo
+import com.example.githubclone.data.GetUserProfileInfoData
 import com.example.githubclone.data.RepositoryResponseData
 import com.example.githubclone.data.repositoryimpl.ProfileRepositoryImpl
 import com.example.githubclone.domain.usecase.impl.UseCaseUserRepositoriesToProfileImpl
@@ -18,8 +18,8 @@ class ProfileViewModel(private val repo: ProfileRepositoryImpl): ViewModel() {
     private val _userProfileInfoLoadingLiveData = MutableLiveData<Boolean>()
     val userProfileInfoLoadingLiveData: LiveData<Boolean> get() = _userProfileInfoLoadingLiveData
 
-    private val _userProfileInfoSuccessLiveData = MutableLiveData<GetUserProfileInfo?>()
-    val userProfileInfoSuccessLiveData: LiveData<GetUserProfileInfo?> get() = _userProfileInfoSuccessLiveData
+    private val _userProfileInfoSuccessLiveData = MutableLiveData<GetUserProfileInfoData?>()
+    val userProfileInfoSuccessLiveData: LiveData<GetUserProfileInfoData?> get() = _userProfileInfoSuccessLiveData
 
     private val _userProfileInfoMessageLiveData = MutableLiveData<String>()
     val userProfileInfoMessageLiveData: LiveData<String> get() = _userProfileInfoMessageLiveData

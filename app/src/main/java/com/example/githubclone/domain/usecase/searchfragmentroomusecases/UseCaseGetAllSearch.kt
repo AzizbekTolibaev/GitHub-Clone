@@ -1,4 +1,4 @@
-package com.example.githubclone.domain.usecase.searchfragmentusecases
+package com.example.githubclone.domain.usecase.searchfragmentroomusecases
 
 import com.example.githubclone.data.dao.entity.SearchData
 

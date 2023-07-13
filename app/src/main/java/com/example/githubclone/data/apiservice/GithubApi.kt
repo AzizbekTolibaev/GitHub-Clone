@@ -18,10 +18,10 @@ interface GithubApi {
         @Field("client_id") clientId: String,
         @Field("client_secret") clientSecret: String,
         @Field("code") code: String
-    ): Response<AccessToken>
+    ): Response<AccessTokenData>
 
     @GET("/user")
-    suspend fun getUserProfileInfo(): Response<GetUserProfileInfo>
+    suspend fun getUserProfileInfo(): Response<GetUserProfileInfoData>
 
     @GET("/user/repos")
     suspend fun getUserRepositories(): Response<MutableList<RepositoryResponseData>>

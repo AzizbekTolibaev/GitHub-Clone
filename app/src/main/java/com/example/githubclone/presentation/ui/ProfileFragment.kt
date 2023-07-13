@@ -5,10 +5,12 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.githubclone.MainActivity
 import com.example.githubclone.presentation.adapters.profilefragmentadapter.HorizontalRepositoryAdapter
 import com.example.githubclone.R
 import com.example.githubclone.databinding.FragmentProfileBinding
 import com.example.githubclone.presentation.viewmodels.ProfileViewModel
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -25,8 +27,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         initObserversProfileInfo()
         initObserversRepositories()
 
-        binding.constraintLayout1.visibility = View.GONE
-        binding.constraintLayout2.visibility = View.GONE
+        binding.scrollView.visibility = View.GONE
         binding.progressBar.visibility = View.VISIBLE
 
         lifecycleScope.launch {
@@ -34,6 +35,16 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             viewModel.getUserProfileInfo()
         }
         binding.rcView.adapter = adapter
+
+        binding.btnRefresh.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.getUserRepositories()
+                viewModel.getUserProfileInfo()
+            }
+
+            binding.progressBar.visibility = View.VISIBLE
+            binding.btnRefresh.visibility = View.GONE
+        }
     }
 
     private fun initObserversRepositories() {
@@ -51,8 +62,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         viewModel.userProfileInfoSuccessLiveData.observe(requireActivity()) {
 
-            binding.constraintLayout1.visibility = View.VISIBLE
-            binding.constraintLayout2.visibility = View.VISIBLE
+            binding.scrollView.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
 
             Picasso.get().load(it?.avatar_url).into(binding.imgProfileImage)
@@ -69,6 +79,9 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
         viewModel.userProfileInfoMessageLiveData.observe(requireActivity()) { }
 
-        viewModel.userProfileInfoErrorLiveData.observe(requireActivity()) {}
+        viewModel.userProfileInfoErrorLiveData.observe(requireActivity()) {
+            binding.progressBar.visibility = View.GONE
+            binding.btnRefresh.visibility = View.VISIBLE
+        }
     }
 }

@@ -2,7 +2,7 @@ package com.example.githubclone.data
 
 import com.google.gson.annotations.SerializedName
 
-data class  GetUserProfileInfo(
+data class  GetUserProfileInfoData(
     @SerializedName("login")
     val userName: String,
     val name: String,

@@ -35,4 +35,5 @@
     <string name="inbox">Inbox</string>
     <string name="repository">Repository</string>
     <string name="discover">Discover</string>
+    <string name="refresh">Refresh</string>
 </resources>
