@@ -43,6 +43,14 @@ class SearchWithRepositoriesFragment: Fragment(R.layout.fragment_search_with_rep
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
         }
+
+        binding.btnRefresh.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.searchWithRepositories(name)
+            }
+            binding.progressBar.visibility = View.VISIBLE
+            binding.btnRefresh.visibility = View.GONE
+        }
     }
 
     private fun initObservers() {
@@ -59,8 +67,9 @@ class SearchWithRepositoriesFragment: Fragment(R.layout.fragment_search_with_rep
 
         viewModel.messageLiveData.observe(requireActivity()) { }
 
-        viewModel.errorLiveData.observe(requireActivity()) { }
+        viewModel.errorLiveData.observe(requireActivity()) {
+            binding.progressBar.visibility = View.GONE
+            binding.btnRefresh.visibility = View.VISIBLE
+        }
     }
-
-
 }

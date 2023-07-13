@@ -64,6 +64,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
             binding.scrollView.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
+            binding.btnRefresh.visibility = View.GONE
 
             Picasso.get().load(it?.avatar_url).into(binding.imgProfileImage)
             binding.tvUserName.text = it?.userName

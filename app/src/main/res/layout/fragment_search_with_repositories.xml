@@ -38,6 +38,18 @@
 
     </LinearLayout>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/refresh"
+        android:textAllCaps="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rc_view"
         android:layout_width="match_parent"
@@ -63,7 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/find_your_stuff"
-            android:textColor="@color/text_color"
+            style="@style/TEXTVIEW"
             android:textSize="22sp"
             android:gravity="center"
             android:textStyle="bold"/>
@@ -73,7 +85,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/search_all_of_github_for_people_repositories_organizations_issues_and_pull_requests"
-            android:textColor="@color/text_color"
+            style="@style/TEXTVIEW"
             android:textSize="16sp"
             android:gravity="center"/>
 

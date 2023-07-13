@@ -36,6 +36,14 @@ class SearchWithUsernameFragment: Fragment(R.layout.fragment_search_with_usernam
             findNavController().popBackStack()
         }
 
+        binding.btnRefresh.setOnClickListener {
+            lifecycleScope.launch {
+                viewModel.searchWithUsername(name)
+            }
+            binding.progressBar.visibility = View.VISIBLE
+            binding.btnRefresh.visibility = View.GONE
+        }
+
         binding.progressBar.visibility = View.VISIBLE
         binding.rcView.visibility = View.GONE
     }
@@ -45,16 +53,19 @@ class SearchWithUsernameFragment: Fragment(R.layout.fragment_search_with_usernam
             if (it?.totalCount != 0) {
                 binding.progressBar.visibility = View.GONE
                 binding.rcView.visibility = View.VISIBLE
+                binding.btnRefresh.visibility = View.GONE
                 adapter.submitList(it?.items)
             } else {
                 binding.progressBar.visibility = View.GONE
                 binding.linearLayoutEmpty.visibility = View.VISIBLE
             }
-
         }
 
         viewModel.messageLiveData.observe(requireActivity()) { }
 
-        viewModel.errorLiveData.observe(requireActivity()) { }
+        viewModel.errorLiveData.observe(requireActivity()) {
+            binding.progressBar.visibility = View.GONE
+            binding.btnRefresh.visibility = View.VISIBLE
+        }
     }
 }
