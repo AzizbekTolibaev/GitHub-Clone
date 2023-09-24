@@ -2,14 +2,13 @@ package com.example.githubclone.presentation.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.githubclone.R
 import com.example.githubclone.databinding.FragmentMainBinding
 
-class MainFragment: Fragment(R.layout.fragment_main) {
+class MainFragment: androidx.fragment.app.Fragment(R.layout.fragment_main) {
     private lateinit var binding: FragmentMainBinding
     private lateinit var navController: NavController
 

@@ -17,7 +17,7 @@ val networkModule = module {
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httpLoggingInterceptor)
-            .addInterceptor(AccessTokenInterceptor( ))
+            .addInterceptor(AccessTokenInterceptor())
             .build()
 
         val retrofit = Retrofit.Builder()

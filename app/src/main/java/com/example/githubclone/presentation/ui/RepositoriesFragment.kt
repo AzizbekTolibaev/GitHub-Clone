@@ -56,7 +56,6 @@ class RepositoriesFragment: Fragment(R.layout.fragment_repositories) {
 
         viewModel.successLiveData.observe(requireActivity()) {
             adapter.submitList(it)
-            Log.d("QQQQ", "List: $it")
             binding.swipeRefresh.isRefreshing = false
             binding.constraintLayout.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
@@ -66,14 +65,12 @@ class RepositoriesFragment: Fragment(R.layout.fragment_repositories) {
             binding.swipeRefresh.isRefreshing = false
             binding.constraintLayout.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
-            Log.d("QQQQ", "MessageLiveData")
         }
 
         viewModel.errorLiveData.observe(requireActivity()) {
             binding.swipeRefresh.isRefreshing = false
             binding.constraintLayout.visibility = View.VISIBLE
             binding.progressBar.visibility = View.GONE
-            Log.d("QQQQ", "ErrorLiveData")
         }
     }
 }
